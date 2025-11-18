@@ -1,0 +1,26 @@
+{
+  "dc24_truck_fridge": {
+    "kwh_day": [0.4, 0.8, 1.2],
+    "peak_w": [60, 120, 180]
+  },
+  "dc24_telecom_small": {
+    "kwh_day": [0.6, 1.2, 1.8],
+    "peak_w": [150, 250, 350]
+  },
+  "dc24_led_parking": {
+    "kwh_day": [0.3, 0.7, 1.2],
+    "peak_w": [50, 100, 180]
+  },
+  "dc24_pump_medium": {
+    "kwh_day": [0.4, 0.9, 1.5],
+    "peak_w": [200, 400, 700]
+  },
+  "dc24_offgrid_cabin_pack": {
+    "kwh_day": [0.8, 1.6, 2.5],
+    "peak_w": [250, 450, 700]
+  },
+  "dc24_inverter_frontend": {
+    "kwh_day": [0.2, 0.5, 0.8],
+    "peak_w": [100, 200, 400]
+  }
+}

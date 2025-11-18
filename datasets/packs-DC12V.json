@@ -1,0 +1,34 @@
+{
+  "dc12_led_lighting_van": {
+    "kwh_day": [0.1, 0.2, 0.3],
+    "peak_w": [30, 60, 90]
+  },
+  "dc12_fridge_small": {
+    "kwh_day": [0.3, 0.6, 0.9],
+    "peak_w": [40, 80, 120]
+  },
+  "dc12_water_pump_small": {
+    "kwh_day": [0.05, 0.1, 0.2],
+    "peak_w": [60, 120, 200]
+  },
+  "dc12_fan_and_vent": {
+    "kwh_day": [0.1, 0.25, 0.4],
+    "peak_w": [30, 70, 120]
+  },
+  "dc12_navigation_and_radios": {
+    "kwh_day": [0.05, 0.15, 0.3],
+    "peak_w": [20, 50, 80]
+  },
+  "dc12_router_and_it": {
+    "kwh_day": [0.1, 0.2, 0.4],
+    "peak_w": [20, 40, 80]
+  },
+  "dc12_camper_full_pack": {
+    "kwh_day": [0.6, 1.2, 2.0],
+    "peak_w": [120, 250, 400]
+  },
+  "dc12_boat_house_loads": {
+    "kwh_day": [0.5, 1.0, 1.8],
+    "peak_w": [150, 300, 500]
+  }
+}

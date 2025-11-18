@@ -1,0 +1,58 @@
+{
+  "studio_flat_single": {
+    "base_load_kwh_day": [0.6, 0.9, 1.2],
+    "base_peak_w": [200, 300, 450]
+  },
+  "one_plus_one_efficient": {
+    "base_load_kwh_day": [0.7, 1.1, 1.4],
+    "base_peak_w": [200, 350, 500]
+  },
+  "one_plus_one_high_usage": {
+    "base_load_kwh_day": [0.9, 1.4, 1.8],
+    "base_peak_w": [250, 400, 600]
+  },
+  "two_plus_one_basic": {
+    "base_load_kwh_day": [0.9, 1.3, 1.7],
+    "base_peak_w": [250, 400, 600]
+  },
+  "two_plus_one_family": {
+    "base_load_kwh_day": [1.2, 1.6, 2.2],
+    "base_peak_w": [300, 500, 750]
+  },
+  "three_plus_one_standard": {
+    "base_load_kwh_day": [1.2, 1.7, 2.2],
+    "base_peak_w": [300, 500, 750]
+  },
+  "three_plus_one_large_family": {
+    "base_load_kwh_day": [1.5, 2.0, 2.8],
+    "base_peak_w": [350, 600, 900]
+  },
+  "four_plus_one_premium": {
+    "base_load_kwh_day": [1.8, 2.5, 3.5],
+    "base_peak_w": [400, 700, 1000]
+  },
+  "detached_house_medium": {
+    "base_load_kwh_day": [1.6, 2.2, 3.0],
+    "base_peak_w": [350, 600, 900]
+  },
+  "detached_house_large": {
+    "base_load_kwh_day": [2.0, 2.8, 4.0],
+    "base_peak_w": [500, 800, 1200]
+  },
+  "villa_with_pool": {
+    "base_load_kwh_day": [3.5, 5.0, 7.0],
+    "base_peak_w": [1500, 2500, 4000]
+  },
+  "tiny_house_offgrid": {
+    "base_load_kwh_day": [0.4, 0.8, 1.2],
+    "base_peak_w": [150, 250, 400]
+  },
+  "caravan_rv_fulltime": {
+    "base_load_kwh_day": [0.6, 1.2, 1.8],
+    "base_peak_w": [200, 350, 500]
+  },
+  "boat_liveaboard": {
+    "base_load_kwh_day": [0.7, 1.4, 2.2],
+    "base_peak_w": [250, 400, 600]
+  }
+}

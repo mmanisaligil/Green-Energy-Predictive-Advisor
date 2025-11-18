@@ -1,0 +1,62 @@
+{
+  "Istanbul": {
+    "summer_kwh_per_kwp": 4.5,
+    "winter_kwh_per_kwp": 1.5
+  },
+  "Ankara": {
+    "summer_kwh_per_kwp": 5.0,
+    "winter_kwh_per_kwp": 1.7
+  },
+  "Izmir": {
+    "summer_kwh_per_kwp": 5.6,
+    "winter_kwh_per_kwp": 1.9
+  },
+  "Antalya": {
+    "summer_kwh_per_kwp": 6.0,
+    "winter_kwh_per_kwp": 2.0
+  },
+  "Bursa": {
+    "summer_kwh_per_kwp": 4.6,
+    "winter_kwh_per_kwp": 1.6
+  },
+  "Konya": {
+    "summer_kwh_per_kwp": 5.3,
+    "winter_kwh_per_kwp": 1.8
+  },
+  "Gaziantep": {
+    "summer_kwh_per_kwp": 5.8,
+    "winter_kwh_per_kwp": 2.0
+  },
+  "Diyarbakir": {
+    "summer_kwh_per_kwp": 5.9,
+    "winter_kwh_per_kwp": 2.1
+  },
+  "Kayseri": {
+    "summer_kwh_per_kwp": 5.4,
+    "winter_kwh_per_kwp": 1.8
+  },
+  "Adana": {
+    "summer_kwh_per_kwp": 5.9,
+    "winter_kwh_per_kwp": 2.0
+  },
+  "Mersin": {
+    "summer_kwh_per_kwp": 6.0,
+    "winter_kwh_per_kwp": 2.0
+  },
+  "Samsun": {
+    "summer_kwh_per_kwp": 4.3,
+    "winter_kwh_per_kwp": 1.5
+  },
+  "Trabzon": {
+    "summer_kwh_per_kwp": 4.2,
+    "winter_kwh_per_kwp": 1.4
+  },
+  "Erzurum": {
+    "summer_kwh_per_kwp": 4.8,
+    "winter_kwh_per_kwp": 1.4
+  },
+  "Eskisehir": {
+    "summer_kwh_per_kwp": 5.1,
+    "winter_kwh_per_kwp": 1.7
+  }
+}

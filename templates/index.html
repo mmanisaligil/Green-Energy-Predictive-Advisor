@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Predictive Energy Audit – EcoFlow Advisor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div>
+        <h1>Predictive Energy Audit</h1>
+        <p class="subtitle">From vague lifestyle → concrete EcoFlow setup + solar savings</p>
+      </div>
+      <div class="badge">alpha</div>
+    </header>
+
+    <!-- STEP 0: Landing choice -->
+    <section class="card">
+      <h2>How do you want to start?</h2>
+      <div class="landing-options">
+        <button id="btnModePremade" class="btn btn-secondary">
+          EcoFlow Pre-Made Packs
+          <span class="btn-caption">Browse ready-made scenarios & bundles</span>
+        </button>
+        <button id="btnModeCustom" class="btn btn-primary">
+          I’m Custom Designing
+          <span class="btn-caption">Build a predictive “energy twin” of your home</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- BRANCH A: Pre-made EcoFlow packs -->
+    <section id="premadeSection" class="card hidden">
+      <div class="section-header">
+        <h2>EcoFlow Pre-Made Packs</h2>
+        <p>Pick a scenario that looks like your life. Each card shows what it covers and the matching EcoFlow tier.</p>
+      </div>
+      <div id="premadeGrid" class="grid"></div>
+    </section>
+
+    <!-- BRANCH B: Custom design -->
+    <section id="customSection" class="card hidden">
+      <div class="section-header">
+        <h2>Custom Predictive Design</h2>
+        <p>We’ll estimate your min / typical / max consumption and map it to EcoFlow tiers and solar.</p>
+      </div>
+
+      <!-- Step 1: Archetype selection -->
+      <div class="step">
+        <div class="step-header">
+          <span class="step-number">1</span>
+          <h3>Home archetype & base load</h3>
+        </div>
+        <div class="step-body">
+          <label class="field">
+            <span class="field-label">Home archetype</span>
+            <select id="archetypeSelect"></select>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" id="expertMode" />
+            <span>Expert mode (skip archetype base load, I’ll define everything with packs)</span>
+          </label>
+          <p class="hint">
+            Archetype gives us your “always on” baseline (fridge, modem, standby, typical lighting) based on
+            your home type and size. Expert mode sets this baseline to zero.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2: Load packs -->
+      <div class="step">
+        <div class="step-header">
+          <span class="step-number">2</span>
+          <h3>Add lifestyle load packs</h3>
+        </div>
+        <div class="step-body">
+          <div class="tabs">
+            <button class="tab active" data-pack-group="ac1p">Residential AC 1-Phase</button>
+            <button class="tab" data-pack-group="ac3p">AC 3-Phase / Industry</button>
+            <button class="tab" data-pack-group="dc12">DC 12 V</button>
+            <button class="tab" data-pack-group="dc24">DC 24 V</button>
+            <button class="tab" data-pack-group="dc48">DC 48 V</button>
+          </div>
+          <div id="packList" class="pack-list"></div>
+
+          <h4>Selected packs</h4>
+          <div id="selectedPacksEmpty" class="empty-state">
+            No packs yet. Click “+ Add” on any pack above to include it in your energy twin.
+          </div>
+          <table id="selectedPacksTable" class="table hidden">
+            <thead>
+              <tr>
+                <th>Pack</th>
+                <th>Group</th>
+                <th>Usage</th>
+                <th>Remove</th>
+              </tr>
+            </thead>
+            <tbody id="selectedPacksBody"></tbody>
+          </table>
+          <p class="hint">
+            The “Usage” slider maps to low / typical / high daily usage within the pack’s min / avg / max band.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3: Solar configuration -->
+      <div class="step">
+        <div class="step-header">
+          <span class="step-number">3</span>
+          <h3>Add solar to the system</h3>
+        </div>
+        <div class="step-body">
+          <label class="field">
+            <span class="field-label">City (for solar yield)</span>
+            <select id="citySelect"></select>
+          </label>
+
+          <div class="field">
+            <span class="field-label">Solar configuration</span>
+            <div class="solar-options">
+              <button class="btn btn-chip" data-solar-preset="400">2 × 200 W (400 W)</button>
+              <button class="btn btn-chip" data-solar-preset="1600">4 × 400 W (1.6 kW)</button>
+              <button class="btn btn-chip" data-solar-preset="6400">8 × 800 W (6.4 kW)</button>
+            </div>
+            <div class="custom-solar">
+              <label>
+                Or custom total PV size:
+                <input type="number" id="solarWpInput" min="0" step="50" placeholder="e.g. 2000" /> W
+              </label>
+            </div>
+          </div>
+
+          <button id="btnSimulate" class="btn btn-primary btn-full">
+            Simulate consumption, solar, savings & EcoFlow recommendation
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="resultsSection" class="card hidden">
+      <div class="section-header">
+        <h2>Simulation results</h2>
+        <p>This is a predictive band, not fake precision. Min / typical / max reflects uncertainty in your inputs.</p>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-card">
+          <h3>Daily consumption</h3>
+          <p class="result-main" id="consumptionSummary"></p>
+          <ul class="result-list">
+            <li id="consumptionMin"></li>
+            <li id="consumptionAvg"></li>
+            <li id="consumptionMax"></li>
+          </ul>
+          <p class="hint" id="peakSummary"></p>
+        </div>
+
+        <div class="result-card">
+          <h3>Solar generation (avg)</h3>
+          <p class="result-main" id="solarSummary"></p>
+          <ul class="result-list">
+            <li id="solarSummer"></li>
+            <li id="solarWinter"></li>
+          </ul>
+        </div>
+
+        <div class="result-card">
+          <h3>Bill & CO₂ impact</h3>
+          <p class="result-main" id="savingsSummary"></p>
+          <ul class="result-list">
+            <li id="savingsYear1"></li>
+            <li id="savingsYear5"></li>
+            <li id="co2Summary"></li>
+          </ul>
+        </div>
+
+        <div class="result-card">
+          <h3>Recommended EcoFlow tier</h3>
+          <p class="result-main" id="tierTitle"></p>
+          <p id="tierUsage"></p>
+          <ul class="result-list" id="tierDetails"></ul>
+          <p class="hint">This is picked to cover your typical daily energy and peak power with a safety margin.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

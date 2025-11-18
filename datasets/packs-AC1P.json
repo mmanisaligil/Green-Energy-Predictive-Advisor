@@ -1,0 +1,70 @@
+{
+  "lighting_basic": {
+    "kwh_day": [0.1, 0.2, 0.3],
+    "peak_w": [80, 150, 250]
+  },
+  "lighting_bright_led": {
+    "kwh_day": [0.2, 0.35, 0.5],
+    "peak_w": [150, 250, 400]
+  },
+  "cooking_light": {
+    "kwh_day": [0.4, 0.7, 1.0],
+    "peak_w": [800, 1500, 2000]
+  },
+  "cooking_normal": {
+    "kwh_day": [0.8, 1.5, 2.2],
+    "peak_w": [1800, 2500, 3000]
+  },
+  "cooking_heavy": {
+    "kwh_day": [1.5, 2.5, 4.0],
+    "peak_w": [2500, 3500, 5000]
+  },
+  "laundry_occasional": {
+    "kwh_day": [0.1, 0.2, 0.4],
+    "peak_w": [500, 800, 1200]
+  },
+  "laundry_regular": {
+    "kwh_day": [0.2, 0.5, 0.8],
+    "peak_w": [800, 1500, 2000]
+  },
+  "laundry_heavy": {
+    "kwh_day": [0.4, 0.8, 1.2],
+    "peak_w": [1200, 2000, 2500]
+  },
+  "cooling_fans_only": {
+    "kwh_day": [0.1, 0.3, 0.6],
+    "peak_w": [80, 150, 300]
+  },
+  "cooling_single_ac_evening": {
+    "kwh_day": [0.5, 1.2, 2.5],
+    "peak_w": [750, 1200, 1800]
+  },
+  "cooling_two_ac_mixed": {
+    "kwh_day": [1.0, 2.5, 4.5],
+    "peak_w": [1500, 2500, 3500]
+  },
+  "heating_electric_partial": {
+    "kwh_day": [1.0, 3.0, 6.0],
+    "peak_w": [2000, 3500, 6000]
+  },
+  "it_wfh_single": {
+    "kwh_day": [0.3, 0.6, 1.0],
+    "peak_w": [150, 250, 400]
+  },
+  "it_wfh_dual": {
+    "kwh_day": [0.5, 0.9, 1.5],
+    "peak_w": [250, 400, 600]
+  },
+  "entertainment_tv_only": {
+    "kwh_day": [0.2, 0.4, 0.7],
+    "peak_w": [100, 200, 300]
+  },
+  "entertainment_tv_console": {
+    "kwh_day": [0.4, 0.8, 1.3],
+    "peak_w": [250, 400, 600]
+  },
+  "entertainment_full_gaming": {
+    "kwh_day": [0.8, 1.5, 2.5],
+    "peak_w": [500, 800, 1200]
+  }
+}

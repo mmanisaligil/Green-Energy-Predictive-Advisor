@@ -1,0 +1,101 @@
+{
+  "tier_1_critical": {
+    "name": "Critical Backup – Apartment Essentials",
+    "recommended_usage": "Fridge, lights, modem, phone/laptop charging during outages.",
+    "products": ["EcoFlow RIVER 2 Pro"],
+    "capacity_wh_total": 768,
+    "inverter_w_continuous": 800,
+    "pv_input_w_max": 220,
+    "notes": "Entry-level resilience for small flats and renters; pairs well with 1–2 portable solar panels."
+  },
+  "tier_2_comfort": {
+    "name": "Comfort Backup – Balcony + Storage",
+    "recommended_usage": "Essential loads plus TV and some AC or fan time.",
+    "products": [
+      "EcoFlow DELTA 2",
+      "EcoFlow PowerStream 800W Microinverter",
+      "2x 400W Rigid Solar Panel"
+    ],
+    "capacity_wh_total": 1024,
+    "inverter_w_continuous": 1800,
+    "pv_input_w_max": 800,
+    "notes": "Good fit for 1+1 and 2+1 households targeting partial bill reduction and outage comfort."
+  },
+  "tier_3_full_backup": {
+    "name": "Full-Home Backup – Single-Phase Hybrid",
+    "recommended_usage": "Most household loads except large electric heating; day–night autonomy with solar.",
+    "products": [
+      "EcoFlow DELTA Pro 3",
+      "EcoFlow PowerOcean 5 kW Hybrid Inverter",
+      "EcoFlow PowerOcean HV Batteries 10 kWh"
+    ],
+    "capacity_wh_total": 14000,
+    "inverter_w_continuous": 5000,
+    "pv_input_w_max": 6500,
+    "notes": "For detached houses / 3+1–4+1 flats aiming for serious self-consumption and blackout protection."
+  },
+  "bundle_balcony_solar_starter": {
+    "name": "Balcony Solar Starter",
+    "recommended_usage": "Renters and small flats with limited roof access, targeting bill reduction.",
+    "products": [
+      "EcoFlow PowerStream 800W Microinverter",
+      "2x 400W Rigid or Balcony PV Panel",
+      "EcoFlow RIVER 2 Max"
+    ],
+    "capacity_wh_total": 512,
+    "inverter_w_continuous": 800,
+    "pv_input_w_max": 800,
+    "notes": "Optimised for 1–2 kWh/day coverage in big cities like Istanbul, Ankara, Izmir."
+  },
+  "bundle_home_office_resilience": {
+    "name": "Home Office Resilience Pack",
+    "recommended_usage": "Remote workers needing guaranteed uptime for PC, monitors, modem and lighting.",
+    "products": [
+      "EcoFlow DELTA 2 Max",
+      "2x 400W Rigid Solar Panel"
+    ],
+    "capacity_wh_total": 2048,
+    "inverter_w_continuous": 2400,
+    "pv_input_w_max": 800,
+    "notes": "Covers 6–10 hours of full WFH load plus critical household appliances."
+  },
+  "bundle_tiny_house_offgrid": {
+    "name": "Tiny House Off-Grid Kit",
+    "recommended_usage": "Tiny houses / bungalows with DC + AC mixed loads and moderate comfort.",
+    "products": [
+      "EcoFlow Power Kits 5 kWh",
+      "EcoFlow Power Hub 3.6 kW",
+      "6x 400W Rigid Solar Panel"
+    ],
+    "capacity_wh_total": 5000,
+    "inverter_w_continuous": 3600,
+    "pv_input_w_max": 2400,
+    "notes": "Designed around 3–6 kWh/day usage patterns and 2–3 kW peak loads."
+  },
+  "bundle_rv_marine_nomad": {
+    "name": "RV / Marine Nomad Pack",
+    "recommended_usage": "Motorhomes, caravans and boats with 12 V and 230 V mixed systems.",
+    "products": [
+      "EcoFlow DELTA Pro",
+      "EcoFlow 48V Smart Extra Battery",
+      "4x 200W Flexible Solar Panel"
+    ],
+    "capacity_wh_total": 7200,
+    "inverter_w_continuous": 3600,
+    "pv_input_w_max": 800,
+    "notes": "Covers fridge, navigation, electronics and climate-control support for mobile users."
+  },
+  "bundle_villa_solar_plus": {
+    "name": "Villa Solar Plus",
+    "recommended_usage": "High-consumption villas with pool pumps, multiple AC units and large white-goods sets.",
+    "products": [
+      "EcoFlow PowerOcean 10 kW Three-Phase Inverter",
+      "EcoFlow PowerOcean HV Batteries 20 kWh",
+      "10–14 kWp Rooftop PV Array"
+    ],
+    "capacity_wh_total": 20000,
+    "inverter_w_continuous": 10000,
+    "pv_input_w_max": 14000,
+    "notes": "Targets 50–80% annual self-consumption coverage in high-sun regions."
+  }
+}
