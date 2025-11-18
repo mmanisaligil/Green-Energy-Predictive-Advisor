@@ -1,0 +1,206 @@
+{
+  "packs": [
+    {
+      "id": "river_everyday",
+      "family": "RIVER Serisi",
+      "segment": "Günlük Temel İhtiyaç",
+      "display_title": "RIVER Serisi – Günlük Temel İhtiyaç Paketi",
+      "audience": "Öğrenciler, kiracılar, küçük evler, hafif karavan/kamp kullanımı.",
+      "tagline": "Küçük ama güçlü; günlük yaşamın güvenli enerji arkadaşı.",
+      "description": "Laptop, modem, LED aydınlatma ve mobil cihazlar için hafif ama güvenli bir günlük enerji çözümü.",
+      "components": [
+        "RIVER 2 Max (512 Wh, 500W AC çıkış)",
+        "110W Taşınabilir Güneş Paneli (1 adet)"
+      ],
+      "power_w": [80, 150, 300],
+      "energy_wh_day": [350, 650, 950],
+      "hours_per_day": [3, 8, 14],
+      "use_cases": [
+        "Uzun süreli laptop ve modem kullanımı",
+        "Küçük evlerde veya ofislerde temel yedek güç",
+        "Hafta sonu kamp ve karavan gezileri"
+      ]
+    },
+    {
+      "id": "delta_comfort_home",
+      "family": "DELTA Serisi",
+      "segment": "Konforlu Ev",
+      "display_title": "DELTA Serisi – Konforlu Ev Paketi",
+      "audience": "1+1 / 2+1 daireler, aileler, orta seviye tüketim.",
+      "tagline": "Evde hem konforu hem güvenliği aynı anda sunan bağımsız güç merkezi.",
+      "description": "Buzdolabı, TV, modem, laptop ve kısa süreli mutfak aletleri için ideal konfor paketi.",
+      "components": [
+        "Delta 2 Max (2.048 Wh, 2.400W AC çıkış)",
+        "160W veya 220W Güneş Paneli (1–2 adet)"
+      ],
+      "power_w": [200, 500, 1200],
+      "energy_wh_day": [900, 1800, 2800],
+      "hours_per_day": [5, 10, 18],
+      "use_cases": [
+        "Buzdolabı + TV + internet + aydınlatma",
+        "Kısa süreli kahve makinesi veya airfryer kullanımı",
+        "Tek AC’yi sınırlı sürelerle destekleme"
+      ]
+    },
+    {
+      "id": "delta_pro_hybrid",
+      "family": "DELTA Pro",
+      "segment": "Ev & Mobil Güç",
+      "display_title": "DELTA Pro – Ev & Mobil Güç İstasyonu Paketi",
+      "audience": "Villalar, büyük evler, karavan/tekne ile uzun süre yaşayan kullanıcılar.",
+      "tagline": "Gerçek şebeke gücünü yanınızda taşıyan profesyonel çözüm.",
+      "description": "Ev, karavan veya tekne için yüksek güçlü, taşınabilir ve hızlı şarj edilebilen hibrit paket.",
+      "components": [
+        "Delta Pro (3.600 Wh, 3.6/7.2 kW AC çıkış)",
+        "400W Rigid Güneş Paneli (2 adet)",
+        "EcoFlow Alternatör Şarj Cihazı (800W)"
+      ],
+      "power_w": [300, 900, 2500],
+      "energy_wh_day": [1500, 3500, 5500],
+      "hours_per_day": [6, 14, 24],
+      "use_cases": [
+        "1–3 buzdolabı/dondurucu ve ev eğlence sistemi",
+        "Su pompası, elektrikli el aletleri, ocak/kettle kısa süreli",
+        "Karavan veya tekne tam zamanlı yaşam senaryoları"
+      ]
+    },
+    {
+      "id": "powerkits_offgrid",
+      "family": "Power Kits",
+      "segment": "Profesyonel Off-Grid",
+      "display_title": "Power Kits – Profesyonel Off-Grid Taban Paketi",
+      "audience": "Off-grid evler, karavan/tekne profesyonelleri, mobil atölyeler.",
+      "tagline": "Gerçek bağımsızlık için modüler, ölçeklenebilir ve profesyonel güç merkezi.",
+      "description": "48V ekosistem üzerinde tam ev/karavan/tekne altyapısını besleyen profesyonel çözüm.",
+      "components": [
+        "5 / 10 / 15 kWh LFP Batarya Modülleri",
+        "48V Power Hub (3.6 kW veya 6 kW)",
+        "48V Alternatör Şarj Cihazı",
+        "400W Rigid Solar Panel (2–6 adet)",
+        "Montaj ve dağıtım aksesuarları"
+      ],
+      "power_w": [600, 1800, 4500],
+      "energy_wh_day": [3500, 7000, 12000],
+      "hours_per_day": [12, 24, 24],
+      "use_cases": [
+        "Karavan/tekne tüm elektrik altyapısını besleme",
+        "1–2 AC, mutfak aletleri, çamaşır/bulaşık makinesi",
+        "Mobil ofis veya atölye uygulamaları"
+      ]
+    },
+    {
+      "id": "powerstream_basic",
+      "family": "PowerStream",
+      "segment": "Balkon Starter",
+      "display_title": "PowerStream – Balkon Tipi Starter Öztüketim Sistemi",
+      "audience": "Apartman daireleri, düşük alanlı kullanıcılar, kiracılar.",
+      "tagline": "Balkonunuzdan kendi elektriğinizi üretin. Tak–çalıştır.",
+      "description": "Tek panel ile faturayı düşüren, plug-and-play balkon güneş sistemi.",
+      "components": [
+        "PowerStream Mikroinvertör",
+        "400W veya 220W Solar Panel (1 adet)",
+        "EcoFlow Uygulaması ile izleme"
+      ],
+      "power_w": [50, 150, 300],
+      "energy_wh_day": [200, 350, 650],
+      "hours_per_day": [3, 5, 6],
+      "use_cases": [
+        "Buzdolabı ve modem tüketiminin bir kısmını offset etmek",
+        "Gün boyu temel yükleri hafifletmek",
+        "Kira kontratına dokunmadan solar denemek"
+      ]
+    },
+    {
+      "id": "powerstream_pro_storage",
+      "family": "PowerStream + Delta 2 Max",
+      "segment": "Balkon + Depolama",
+      "display_title": "PowerStream Pro – Profesyonel Balkon + Depolama Seti",
+      "audience": "1+1–3+1 daireler, faturayı ciddi düşürmek isteyen kullanıcılar.",
+      "tagline": "Gündüz güneş, akşam batarya. Gerçek tasarruf döngüsü.",
+      "description": "Gündüz solar ile yükleri besleyip fazla enerjiyi Delta 2 Max’e depolayan akıllı paket.",
+      "components": [
+        "PowerStream Mikroinvertör",
+        "400W Solar Panel (2 adet)",
+        "EcoFlow Smart Plug",
+        "Smart Meter",
+        "Delta 2 Max (2 kWh depolama)"
+      ],
+      "power_w": [200, 800, 2200],
+      "energy_wh_day": [600, 1300, 2000],
+      "hours_per_day": [4, 8, 12],
+      "use_cases": [
+        "Buzdolabı + TV + modem + çalışma odası yükleri",
+        "Akşam tüketimini bataryadan karşılama",
+        "Pik tarifeleri otomatik optimize etme"
+      ]
+    },
+    {
+      "id": "stream_max",
+      "family": "STREAM Max",
+      "segment": "Yeni Nesil Öztüketim",
+      "display_title": "STREAM Max – Yeni Nesil Öztüketim Sistemi",
+      "audience": "Geniş balkonlu, yüksek güneş alan daireler; 2–3 kişilik haneler.",
+      "tagline": "Daha fazla panel, daha fazla üretim. Yine de tak–çalıştır.",
+      "description": "800W’a kadar panel gücü ile günlük tüketimi anlamlı şekilde azaltan sistem.",
+      "components": [
+        "STREAM Max Mikroinvertör",
+        "Toplam 800W Panel Gücü (2 adet yüksek verimli panel)"
+      ],
+      "power_w": [150, 400, 600],
+      "energy_wh_day": [700, 1200, 1900],
+      "hours_per_day": [3, 5, 7],
+      "use_cases": [
+        "Gündüz AC’yi kısmen desteklemek",
+        "Mutfak ve ofis yüklerinin bir kısmını güneşten beslemek",
+        "Günlük tüketimin önemli kısmını offset etmek"
+      ]
+    },
+    {
+      "id": "stream_pro_dual",
+      "family": "STREAM Pro",
+      "segment": "Profesyonel İkili Set",
+      "display_title": "STREAM Pro – Yeni Nesil Profesyonel İkili Set",
+      "audience": "Büyük daireler, ev ofisler, yüksek tüketimli haneler.",
+      "tagline": "İkili inverter + 4 panel = yüksek üretim + tam otomasyon.",
+      "description": "İki mikroinvertör ve dört panel ile ciddi üretim ve akıllı yük yönetimi.",
+      "components": [
+        "STREAM Pro Mikroinvertör (2 adet)",
+        "Yüksek verimli PV Panel (4 adet)",
+        "Smart Plug",
+        "Smart Meter",
+        "Opsiyonel Delta 2 Max depolama"
+      ],
+      "power_w": [400, 800, 1200],
+      "energy_wh_day": [1300, 2000, 3200],
+      "hours_per_day": [4, 6, 8],
+      "use_cases": [
+        "AC + mutfak + ofis yüklerinin büyük kısmını beslemek",
+        "Yüksek fatura azaltımı hedefleyen daireler",
+        "Akıllı otomasyon ile pik yük yönetimi"
+      ]
+    },
+    {
+      "id": "powerocean_full",
+      "family": "PowerOcean",
+      "segment": "Tam Bağımsız Konut",
+      "display_title": "PowerOcean – Tam Bağımsız Profesyonel Konut Seti",
+      "audience": "Müstakil evler, villalar, yazlıklar; tam bağımsızlık isteyen kullanıcılar.",
+      "tagline": "Eviniz kendi elektriğini üretir, depolar ve yönetir.",
+      "description": "5–10 kW hibrit inverter ve 5–15 kWh batarya ile tam konut ölçeğinde bağımsızlık.",
+      "components": [
+        "PowerOcean 5 / 10 kW Hibrit İnvertör",
+        "5–15 kWh LFP Batarya Modülleri",
+        "400W Rigid Panel (6–18 adet)",
+        "Smart Meter ve PV bağlantı ekipmanları"
+      ],
+      "power_w": [1500, 3500, 6000],
+      "energy_wh_day": [6000, 12000, 20000],
+      "hours_per_day": [24, 24, 24],
+      "use_cases": [
+        "Evdeki tüm yüklerin aynı anda çalışması",
+        "2–3 klima + mutfak + çamaşır/bulaşık makineleri",
+        "Şebekeden bağımsız ada modu ve blackout koruması"
+      ]
+    }
+  ]
+}

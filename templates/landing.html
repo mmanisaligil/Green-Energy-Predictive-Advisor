@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Predictive Energy Twin – Giriş</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div>
+        <h1>Predictive Energy Twin</h1>
+        <p class="subtitle">
+          Yaşam tarzından yola çıkarak tüketimini tahmin eden ve sana uygun EcoFlow sistemini öneren akıllı danışman.
+        </p>
+      </div>
+      <div class="badge">alpha • TR</div>
+    </header>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>Giriş Seçenekleri</h2>
+        <p>
+          İlk sürümde giriş ve kayıt kapalı. Her şey <strong>Guest Demo</strong> üzerinden çalışacak.
+        </p>
+      </div>
+
+      <div class="landing-options">
+        <!-- LOGIN (placeholder, disabled) -->
+        <button class="btn btn-secondary" disabled>
+          Login
+          <span class="btn-caption">Yakında: kayıtlı kullanıcı profilleri</span>
+        </button>
+
+        <!-- SIGNUP (placeholder, disabled) -->
+        <button class="btn btn-secondary" disabled>
+          Signup
+          <span class="btn-caption">Yakında: kişisel enerji profili kaydı</span>
+        </button>
+
+        <!-- GUEST DEMO (active) -->
+        <button class="btn btn-primary" onclick="location.href='{{ url_for('guest_demo') }}'">
+          Guest Demo
+          <span class="btn-caption">
+            Uzman, Tavsiye Edilen Sistemler ve AI Chat modlarına buradan gir
+          </span>
+        </button>
+      </div>
+
+      <p class="hint" style="margin-top:16px;">
+        Not: Login &amp; Signup ilk lansmanda devre dışı. Tüm navigasyon Guest Demo üzerinden yapılacak.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

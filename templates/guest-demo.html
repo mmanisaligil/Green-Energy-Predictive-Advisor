@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guest Demo – Enerji İkizi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div>
+        <h1>Guest Demo</h1>
+        <p class="subtitle">
+          Üç farklı yol: Uzman sensin, Tavsiye Edilen Sistemler, veya AI destekli hızlı sohbet.
+        </p>
+      </div>
+      <button class="btn btn-secondary" onclick="location.href='{{ url_for('landing') }}'">← Ana Sayfa</button>
+    </header>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>Bir yol seç</h2>
+        <p>Her mod aynı çekirdeği kullanır, sadece yaklaşım şekli farklıdır.</p>
+      </div>
+
+      <div class="grid">
+        <div class="premade-card">
+          <h3>Uzman </h3>
+          <p class="hint">
+            Arketip seç, yük paketlerini ekle, şehir ve güneş gücünü gir. Gerçekçi tüketim hesabı ve üretim tahmini.
+          </p>
+          <button class="btn btn-primary btn-full" onclick="location.href='{{ url_for('audit') }}'">
+            Uzman Moduna Geç
+          </button>
+        </div>
+
+        <div class="premade-card">
+          <h3>Tavsiye Edilen Sistemler</h3>
+          <p class="hint">
+            EcoFlow odaklı hazır paketleri incele. Her kartta kapsadığı yaşam tarzı, güç/enerji bandı ve ürün listesi var.
+          </p>
+          <button class="btn btn-secondary btn-full" onclick="location.href='{{ url_for('recommended') }}'">
+            Paketleri İncele
+          </button>
+        </div>
+
+        <div class="premade-card">
+          <h3>AI Chat</h3>
+          <p class="hint">
+            Tüketim tahmini, güneş üretimi ve EcoFlow önerisi tek ekranda. Sonuç önceki modeller ile hemen hemen aynı fakat AI trendinde kalmak prestij açısından faydalı. 
+          </p>
+          <button class="btn btn-secondary btn-full" onclick="location.href='{{ url_for('llm_chat') }}'">
+            AI Chat (Placeholder)
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

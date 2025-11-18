@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Chat – Placeholder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div>
+        <h1>AI Chat (Placeholder)</h1>
+        <p class="subtitle">
+          Gelecekte: doğal dil ile sor, sistem senin yerine arketip + yük paketi + solar boyutlandırmayı kuracak.
+        </p>
+      </div>
+      <button class="btn btn-secondary" onclick="location.href='{{ url_for('landing') }}'">← Ana Sayfa</button>
+    </header>
+
+    <section class="card">
+      <p class="hint">
+        Bu sayfa henüz prototip aşamasında. Önce çekirdek hesaplama motorunu ve görsel arayüzü tamamlıyoruz,
+        ardından AI destekli sohbet katmanına geçeceğiz.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

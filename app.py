@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from engine import (
     calculate_energy_profile,
     recommend_ecoflow_tiers,
@@ -12,12 +12,59 @@ from engine import (
     solar_generation_db,
 )
 
+import os
+
 app = Flask(__name__)
 
 
+# --------- PAGE ROUTES ---------
+
+
 @app.route("/")
-def index():
+def landing():
+    return render_template("landing.html")
+
+
+@app.route("/guest-demo")
+def guest_demo():
+    return render_template("guest-demo.html")
+
+
+@app.route("/recommended")
+def recommended():
+    return render_template("recommended.html")
+
+
+@app.route("/advanced")
+def advanced():
+    return render_template("advanced.html")
+
+
+@app.route("/llm-chat")
+def llm_chat():
+    return render_template("llm-chat.html")
+
+
+@app.route("/audit")
+def audit():
+    # existing custom predictive UI
     return render_template("index.html")
+
+
+# --------- DATASETS STATIC ACCESS ---------
+
+
+@app.route("/datasets/<path:filename>")
+def datasets(filename: str):
+    """
+    Serve JSON datasets so frontend can fetch:
+    e.g. /datasets/standard-pack-1.json
+    """
+    datasets_dir = os.path.join(app.root_path, "datasets")
+    return send_from_directory(datasets_dir, filename)
+
+
+# --------- API ENDPOINTS (unchanged) ---------
 
 
 @app.route("/api/init", methods=["GET"])
@@ -60,7 +107,10 @@ def api_calculate():
 
         archetype_id = data.get("archetype_id") or data.get("archetype")
         if not archetype_id:
-            return jsonify({"error": "archetype_id (or archetype) is required."}), 400
+            return (
+                jsonify({"error": "archetype_id (veya archetype) gereklidir."}),
+                400,
+            )
 
         packs_raw = data.get("packs", [])
         rich_packs = None
@@ -93,7 +143,7 @@ def api_calculate():
         return jsonify({"error": str(e)}), 400
     except Exception as e:
         print("Internal error in /api/calculate:", e)
-        return jsonify({"error": "An internal error occurred."}), 500
+        return jsonify({"error": "Sunucu tarafında bir hata oluştu."}), 500
 
 
 if __name__ == "__main__":

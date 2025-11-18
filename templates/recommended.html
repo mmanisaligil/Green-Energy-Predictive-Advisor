@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tavsiye Edilen Sistemler – EcoFlow Paketleri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div>
+        <h1>Tavsiye Edilen Sistemler</h1>
+        <p class="subtitle">
+          EcoFlow ürün ailesi için özenle hazırlanmış paketler. Her kartta güç/enerji bandı ve tipik kullanım senaryosu yer alır.
+        </p>
+      </div>
+      <button class="btn btn-secondary" onclick="location.href='{{ url_for('landing') }}'">← Ana Sayfa</button>
+    </header>
+
+    <section class="card">
+      <div class="section-header">
+        <h2>EcoFlow Odaklı Standart Paketler</h2>
+        <p>Bu bölüm sadece vitrindir; daha sonra bu paketleri Uzman modunda detaylı olarak simüle edebilirsin.</p>
+      </div>
+
+      <div id="recommendedGrid" class="grid">
+        <!-- JS ile doldurulacak -->
+      </div>
+
+      <div id="packDetail" class="card" style="margin-top:16px; display:none;">
+        <div class="section-header">
+          <h2 id="detailTitle">Paket Detayı</h2>
+          <p id="detailSubtitle" class="subtitle"></p>
+        </div>
+        <div class="results-grid">
+          <div class="result-card">
+            <h3>Güç ve Enerji Bandı</h3>
+            <p class="result-main" id="detailPower"></p>
+            <ul class="result-list" id="detailEnergy"></ul>
+          </div>
+          <div class="result-card">
+            <h3>Günlük Kullanım Saatleri</h3>
+            <p class="result-main" id="detailHours"></p>
+            <ul class="result-list" id="detailHoursList"></ul>
+          </div>
+          <div class="result-card">
+            <h3>Bileşenler</h3>
+            <ul class="result-list" id="detailComponents"></ul>
+          </div>
+          <div class="result-card">
+            <h3>Tipik Kullanım Senaryoları</h3>
+            <ul class="result-list" id="detailUseCases"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Basit fetch + render
+    async function loadPacks() {
+      try {
+        const res = await fetch('/datasets/standard-pack-1.json');
+        if (!res.ok) throw new Error('Dataset yüklenemedi');
+        const data = await res.json();
+        const packs = data.packs || [];
+        const grid = document.getElementById('recommendedGrid');
+
+        if (!packs.length) {
+          grid.innerHTML = '<p class="hint">Henüz tanımlı paket yok.</p>';
+          return;
+        }
+
+        packs.forEach(pack => {
+          const card = document.createElement('div');
+          card.className = 'premade-card';
+          card.innerHTML = `
+            <h3>${pack.display_title}</h3>
+            <small>${pack.audience || ''}</small>
+            <p class="hint">${pack.tagline || ''}</p>
+            <div class="premade-tags">
+              <span class="tag">${pack.family}</span>
+              <span class="tag">${pack.segment}</span>
+            </div>
+            <div class="premade-footer">
+              <span>${pack.power_w[0]}–${pack.power_w[2]} W</span>
+              <button class="btn btn-secondary" style="padding:4px 10px;font-size:0.75rem;">
+                Detayı Gör
+              </button>
+            </div>
+          `;
+          card.querySelector('button').addEventListener('click', () => showDetail(pack));
+          grid.appendChild(card);
+        });
+      } catch (err) {
+        console.error(err);
+        document.getElementById('recommendedGrid').innerHTML =
+          '<p class="hint">Paketler yüklenirken bir hata oluştu.</p>';
+      }
+    }
+
+    function showDetail(pack) {
+      const detailSection = document.getElementById('packDetail');
+      detailSection.style.display = 'block';
+
+      document.getElementById('detailTitle').textContent = pack.display_title;
+      document.getElementById('detailSubtitle').textContent = pack.description || '';
+
+      const [pMin, pTyp, pMax] = pack.power_w;
+      const [eMin, eTyp, eMax] = pack.energy_wh_day;
+      document.getElementById('detailPower').textContent =
+        `${pMin} – ${pTyp} – ${pMax} W (min / tipik / max)`;
+
+      const energyList = document.getElementById('detailEnergy');
+      energyList.innerHTML = `
+        <li>Min: ${eMin} Wh/gün</li>
+        <li>Tipik: ${eTyp} Wh/gün</li>
+        <li>Max: ${eMax} Wh/gün</li>
+      `;
+
+      const [hMin, hTyp, hMax] = pack.hours_per_day;
+      document.getElementById('detailHours').textContent =
+        `${hMin} – ${hTyp} – ${hMax} saat/gün`;
+
+      const hoursList = document.getElementById('detailHoursList');
+      hoursList.innerHTML = `
+        <li>Min kullanım: ${hMin} saat/gün</li>
+        <li>Tipik kullanım: ${hTyp} saat/gün</li>
+        <li>Yoğun kullanım: ${hMax} saat/gün</li>
+      `;
+
+      const compList = document.getElementById('detailComponents');
+      compList.innerHTML = '';
+      (pack.components || []).forEach(c => {
+        const li = document.createElement('li');
+        li.textContent = c;
+        compList.appendChild(li);
+      });
+
+      const useList = document.getElementById('detailUseCases');
+      useList.innerHTML = '';
+      (pack.use_cases || []).forEach(u => {
+        const li = document.createElement('li');
+        li.textContent = u;
+        useList.appendChild(li);
+      });
+
+      detailSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    loadPacks();
+  </script>
+</body>
+</html>
