@@ -6,7 +6,7 @@ This README will make your repo look like a polished open-source product, not a 
 
 ---
 
-# 📘 **README.md (Copy–Paste Ready)**
+# 📘 **README.md**
 
 # 🌱 Green Energy Predictive Advisor
 **A predictive, AI-ready energy analysis tool that estimates electricity consumption, forecasts solar generation, and recommends optimal energy system sizing.**
@@ -142,8 +142,7 @@ If you want to extend the predictive logic (new packs, cities, appliances, load 
 
 ## 📜 License
 
-MIT License (recommended)  
-→ You can add via GitHub UI under **“Add license”**.
+GNU General Public License 3.0
 
 ---
 
