@@ -1,13 +1,3 @@
-# **Green Energy Predictive Advisor**
-
-*A modern web-based energy consumption analyzer, solar generation forecaster & system sizing engine.*
-
-This README will make your repo look like a polished open-source product, not a side script. Crisp, technical, and market-friendly — without exposing anything proprietary to Boemar/EcoFlow.
-
----
-
-# 📘 **README.md**
-
 # 🌱 Green Energy Predictive Advisor
 **A predictive, AI-ready energy analysis tool that estimates electricity consumption, forecasts solar generation, and recommends optimal energy system sizing.**
 
